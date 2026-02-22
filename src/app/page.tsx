@@ -25,8 +25,7 @@ export default async function HomePage() {
             <span className="text-gold">Capturing places.</span>
           </h1>
           <p className="text-stone-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
-            I lead engineering at DraftKings and spend my off hours chasing light 
-            in wild places. This is where I write about both.
+            Engineering and Photos
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/blog" className="btn-primary">Read the blog</Link>
@@ -97,12 +96,11 @@ export default async function HomePage() {
             <div>
               <p className="label-mono mb-3">About</p>
               <h2 className="heading-display text-3xl mb-5">
-                Engineer by trade.<br />
-                <span className="text-gold">Explorer by instinct.</span>
+                Engineer for money.<br />
+                <span className="text-gold">Take photos for fun.</span>
               </h2>
               <p className="text-stone-400 leading-relaxed mb-6">
-                Senior Director of Engineering at DraftKings, where I lead teams building 
-                high-scale sports betting and gaming products. Outside of work, I photograph 
+                Senior Director of Engineering at DraftKings, where I lead the lottery fulfillment teams. Outside of work, I photograph 
                 landscapes and travel destinations around the world.
               </p>
               <Link href="/about" className="btn-outline">More about me →</Link>
