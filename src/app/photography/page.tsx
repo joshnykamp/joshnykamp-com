@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import type { Photo } from "@/types";
 import "yet-another-react-lightbox/styles.css";
 
 // TODO: Replace with real photos imported from your /public/images/photography directory
@@ -10,10 +11,7 @@ const collections = [
   { id: "travel", label: "Travel" },
 ];
 
-const photos = [
-  // Example structure — replace src with real paths:
-  // { id: 1, src: "/images/photography/landscape-01.jpg", alt: "Description", collection: "landscape", location: "Location" },
-];
+const photos = [] as Photo[];
 
 export default function PhotographyPage() {
   const [activeCollection, setActiveCollection] = useState("all");
