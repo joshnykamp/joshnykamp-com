@@ -23,7 +23,6 @@ export default function PhotographyPage() {
 
   return (
     <div className="py-20">
-      {/* Header */}
       <div className="container-content mb-12">
         <p className="label-mono mb-4">Photography</p>
         <h1 className="heading-display text-4xl md:text-6xl mb-6 max-w-2xl">
@@ -31,12 +30,11 @@ export default function PhotographyPage() {
           <span className="text-gold">from the field.</span>
         </h1>
         <p className="text-stone-400 max-w-lg leading-relaxed">
-          Amateur travel and landscape photography. Mostly wide open spaces, 
+          Amateur travel and landscape photography. Mostly wide open spaces,
           dramatic light, and places worth remembering.
         </p>
       </div>
 
-      {/* Collection filter */}
       <div className="container-content mb-10">
         <div className="flex gap-2 flex-wrap">
           {collections.map((c) => (
@@ -55,7 +53,6 @@ export default function PhotographyPage() {
         </div>
       </div>
 
-      {/* Grid */}
       {filtered.length > 0 ? (
         <div className="container-content">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -83,7 +80,6 @@ export default function PhotographyPage() {
         </div>
       )}
 
-      {/* Lightbox */}
       <Lightbox
         open={lightboxIndex >= 0}
         index={lightboxIndex}
