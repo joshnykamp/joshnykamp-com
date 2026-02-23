@@ -18,11 +18,11 @@ export default async function HomePage() {
         <div className="container-content w-full py-32">
           <p className="label-mono mb-6">Senior Director of Engineering · DraftKings</p>
           <h1 className="heading-display text-5xl md:text-7xl lg:text-8xl text-stone-100 max-w-4xl mb-8">
-            Navy to Hustler<br />
-            <span className="text-gold">to DraftKings.</span>
+            Navy//Hustler//Weedmaps<br />
+            <span className="text-gold">DraftKings.</span>
           </h1>
           <p className="text-stone-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
-            Engineering leader, lottery fulfillment nerd, and amateur photographer
+            Engineering leader, amateur photographer, surfer, and mountain biker
             splitting time between Huntington Beach and Ireland. Occasionally I write things down.
           </p>
           <div className="flex flex-wrap gap-4">
