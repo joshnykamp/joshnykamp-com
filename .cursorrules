@@ -1,0 +1,25 @@
+You are helping build a personal website for Josh Nykamp - a Senior Director of Engineering at DraftKings, amateur photographer, surfer, and mountain biker.
+
+## Stack
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- MDX via next-mdx-remote
+- Deployed on Vercel (assumed)
+
+## Coding Preferences
+- Use TypeScript strictly - always type props and return values
+- Functional components only, no class components
+- Tailwind for all styling - no CSS modules or inline styles
+- Use App Router conventions (app/ directory, server components by default)
+- Keep components small and composable
+- Use server components unless interactivity requires client components - mark with 'use client' explicitly
+
+## Content
+- Blog/writing content is MDX
+- Photography is a key section - lightbox already installed (yet-another-react-lightbox)
+
+## General
+- Prefer simple, readable code over clever code
+- When suggesting changes, explain the "why" briefly
+- Don't over-engineer - this is a personal site
