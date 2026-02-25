@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -17,8 +18,15 @@ export default function AboutPage() {
 
       <div className="grid md:grid-cols-3 gap-16">
         <div className="md:col-span-1">
-          <div className="aspect-[3/4] bg-stone-800 border border-stone-700 rounded-sm flex items-center justify-center mb-4">
-            <span className="label-mono text-stone-600">headshot</span>
+          <div className="aspect-[3/4] rounded-sm overflow-hidden border border-stone-700 mb-4">
+            <Image
+              src="/images/headshot-about.jpg"
+              alt="Josh Nykamp"
+              width={600}
+              height={800}
+              className="w-full h-full object-cover object-top"
+              priority
+            />
           </div>
           <div className="space-y-2">
             <a href="https://linkedin.com/in/joshnykamp" target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center text-sm">LinkedIn →</a>
