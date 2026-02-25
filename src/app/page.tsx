@@ -60,7 +60,7 @@ export default async function HomePage() {
             <div>
               <p className="label-mono mb-2">Photography</p>
               <h2 className="heading-display text-3xl md:text-4xl max-w-lg">
-                Photos from places I probably had no business getting to.
+                Taking the Long Way.
               </h2>
             </div>
             <Link href="/photography" className="btn-outline flex-shrink-0">View gallery →</Link>
