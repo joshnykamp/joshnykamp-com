@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getRecentPosts } from "@/lib/posts";
 import { PostCard } from "@/components/blog/PostCard";
 
@@ -17,13 +18,13 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(122,184,232,0.04),transparent_60%)]" />
         <div className="container-content w-full py-32">
           <p className="label-mono mb-6">Senior Director of Engineering · DraftKings</p>
-          <h1 className="heading-display text-5xl md:text-7xl lg:text-8xl text-stone-100 max-w-4xl mb-8">
-            Navy//Hustler//Weedmaps<br />
+          <h1 className="heading-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-stone-100 max-w-4xl mb-8">
+            Navy//Hustler//<br className="sm:hidden" />Weedmaps<br />
             <span className="text-gold">DraftKings.</span>
           </h1>
           <p className="text-stone-400 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
             Engineering leader, amateur photographer, surfer, and mountain biker
-            splitting time between Huntington Beach and Ireland. Occasionally I write things down.
+            I split my time between Huntington Beach and Ireland.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link href="/blog" className="btn-primary">Read the blog</Link>
@@ -91,8 +92,15 @@ export default async function HomePage() {
               </p>
               <Link href="/about" className="btn-outline">More about me →</Link>
             </div>
-            <div className="aspect-square bg-stone-800 border border-stone-700 rounded-sm flex items-center justify-center">
-              <span className="label-mono text-stone-600">headshot</span>
+            <div className="aspect-square rounded-sm overflow-hidden border border-stone-700 bg-stone-950">
+              <Image
+                src="/images/headshot.jpg"
+                alt="Josh Nykamp"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
