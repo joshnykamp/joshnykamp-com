@@ -65,10 +65,16 @@ export default async function HomePage() {
             </div>
             <Link href="/photography" className="btn-outline flex-shrink-0">View gallery →</Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-square bg-stone-800 border border-stone-700 rounded-sm flex items-center justify-center">
-                <span className="label-mono text-stone-600">photo {i}</span>
+              <div key={i} className="aspect-[3/2] bg-stone-800 border border-stone-700 rounded-sm overflow-hidden">
+                <Image
+                  src={`/images/homepage-${i}.jpg`}
+                  alt={`Photography ${i}`}
+                  width={1800}
+                  height={1010}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
           </div>
