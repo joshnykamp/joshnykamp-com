@@ -29,7 +29,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="space-y-2">
-            <a href="https://linkedin.com/in/joshnykamp" target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center text-sm">LinkedIn →</a>
+            <a href="https://www.linkedin.com/in/josh-nykamp/" target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center text-sm">LinkedIn →</a>
             <Link href="/resume" className="btn-outline w-full justify-center text-sm">View Resume →</Link>
           </div>
         </div>

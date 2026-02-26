@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 const links = [
-  { label: "LinkedIn", href: "https://linkedin.com/in/joshnykamp", note: "Best for professional inquiries" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/josh-nykamp/", note: "Best for professional inquiries" },
   { label: "Instagram", href: "https://instagram.com/joshnykamp", note: "Photography updates" },
   { label: "GitHub", href: "https://github.com/joshnykamp", note: "Code & projects" },
   { label: "Email", href: "mailto:hello@joshnykamp.com", note: "hello@joshnykamp.com" },
