@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getRecentPosts } from "@/lib/posts";
 import { PostCard } from "@/components/blog/PostCard";
+import HomepagePhotoGrid from "@/components/HomepagePhotoGrid";
 
 export const metadata: Metadata = {
   title: "Josh Nykamp — Engineering Leader & Photographer",
@@ -65,19 +66,7 @@ export default async function HomePage() {
             </div>
             <Link href="/photography" className="btn-outline flex-shrink-0">View gallery →</Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-12">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-[3/2] bg-stone-800 border border-stone-700 rounded-sm overflow-hidden">
-                <Image
-                  src={`/images/homepage-${i}.jpg`}
-                  alt={`Photography ${i}`}
-                  width={1800}
-                  height={1010}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
+          <HomepagePhotoGrid />
         </div>
       </section>
 
