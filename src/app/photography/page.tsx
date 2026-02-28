@@ -10,7 +10,28 @@ const collections = [
   { id: "travel", label: "Travel" },
 ];
 
-const photos: Photo[] = [];
+const photos: Photo[] = [
+  { id: 1,  src: "/images/gallery/gallery-1.jpg",  alt: "Photo 1",  collection: "landscape" },
+  { id: 2,  src: "/images/gallery/gallery-2.jpg",  alt: "Photo 2",  collection: "landscape" },
+  { id: 3,  src: "/images/gallery/gallery-3.jpg",  alt: "Photo 3",  collection: "landscape" },
+  { id: 4,  src: "/images/gallery/gallery-4.jpg",  alt: "Photo 4",  collection: "landscape" },
+  { id: 5,  src: "/images/gallery/gallery-5.jpg",  alt: "Photo 5",  collection: "landscape" },
+  { id: 6,  src: "/images/gallery/gallery-6.jpg",  alt: "Photo 6",  collection: "landscape" },
+  { id: 7,  src: "/images/gallery/gallery-7.jpg",  alt: "Photo 7",  collection: "landscape" },
+  { id: 8,  src: "/images/gallery/gallery-8.jpg",  alt: "Photo 8",  collection: "landscape" },
+  { id: 9,  src: "/images/gallery/gallery-9.jpg",  alt: "Photo 9",  collection: "landscape" },
+  { id: 10, src: "/images/gallery/gallery-10.jpg", alt: "Photo 10", collection: "landscape" },
+  { id: 11, src: "/images/gallery/gallery-11.jpg", alt: "Photo 11", collection: "landscape" },
+  { id: 12, src: "/images/gallery/gallery-12.jpg", alt: "Photo 12", collection: "landscape" },
+  { id: 14, src: "/images/gallery/gallery-14.jpg", alt: "Photo 14", collection: "landscape" },
+  { id: 15, src: "/images/gallery/gallery-15.jpg", alt: "Photo 15", collection: "landscape" },
+  { id: 16, src: "/images/gallery/gallery-16.jpg", alt: "Photo 16", collection: "landscape" },
+  { id: 17, src: "/images/gallery/gallery-17.jpg", alt: "Photo 17", collection: "landscape" },
+  { id: 18, src: "/images/gallery/gallery-18.jpg", alt: "Photo 18", collection: "landscape" },
+  { id: 19, src: "/images/gallery/gallery-19.jpg", alt: "Photo 19", collection: "landscape" },
+  { id: 20, src: "/images/gallery/gallery-20.jpg", alt: "Photo 20", collection: "landscape" },
+  { id: 21, src: "/images/gallery/gallery-21.jpg", alt: "Photo 21", collection: "landscape" },
+];
 
 export default function PhotographyPage() {
   const [activeCollection, setActiveCollection] = useState("all");
@@ -55,17 +76,17 @@ export default function PhotographyPage() {
 
       {filtered.length > 0 ? (
         <div className="container-content">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+          <div className="columns-2 md:columns-3 gap-2 space-y-2">
             {filtered.map((photo, i) => (
               <button
                 key={photo.id}
                 onClick={() => setLightboxIndex(i)}
-                className="aspect-square overflow-hidden bg-stone-800 border border-stone-700 hover:border-stone-500 transition-colors group"
+                className="break-inside-avoid w-full overflow-hidden bg-stone-800 border border-stone-700 hover:border-stone-500 transition-colors group block"
               >
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-auto group-hover:scale-105 transition-transform duration-500"
                 />
               </button>
             ))}
