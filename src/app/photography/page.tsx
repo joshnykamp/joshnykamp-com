@@ -12,7 +12,7 @@ const photos: Photo[] = [
   { id: 3,  src: "/images/gallery/gallery-3.jpg",  alt: "Medellín cityscape in morning mist",                     tags: ["colombia", "travel"],                    location: "Medellín, Colombia" },
   { id: 4,  src: "/images/gallery/gallery-4.jpg",  alt: "El Peñol rock rising above Guatapé",                     tags: ["colombia", "landscape"],                 location: "Guatapé, Colombia" },
   { id: 5,  src: "/images/gallery/gallery-5.jpg",  alt: "Aerial view of Guatapé reservoir and islands",           tags: ["colombia", "landscape"],                 location: "Guatapé, Colombia" },
-  { id: 6,  src: "/images/gallery/gallery-6.jpg",  alt: "Lone figure in a misty mountain forest",                 tags: ["colombia", "landscape"],                 location: "Colombia" },
+  { id: 6,  src: "/images/gallery/gallery-6.jpg",  alt: "Lone figure in a misty mountain forest",                 tags: ["mexico", "landscape"],                   location: "Oaxaca, Mexico" },
   { id: 7,  src: "/images/gallery/gallery-7.jpg",  alt: "Coastal trail at golden hour sunset",                    tags: ["california", "landscape"],               location: "California" },
   { id: 8,  src: "/images/gallery/gallery-8.jpg",  alt: "Cliffs of Moher from the Atlantic, black and white",     tags: ["ireland", "landscape", "black & white"], location: "Cliffs of Moher, Ireland" },
   { id: 9,  src: "/images/gallery/gallery-9.jpg",  alt: "Cliffs of Moher under stormy skies, black and white",    tags: ["ireland", "landscape", "black & white"], location: "Cliffs of Moher, Ireland" },
