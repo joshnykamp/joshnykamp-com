@@ -2,7 +2,9 @@
 import type { Photo } from "@/types";
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/captions.css";
 
 const photos: Photo[] = [
   { id: 1,  src: "/images/gallery/gallery-1.jpg",  alt: "Stone bridge over a stream in an Alpine village",         tags: ["alps", "travel"],                        location: "French Alps" },
@@ -103,7 +105,8 @@ export default function PhotographyPage() {
         open={lightboxIndex >= 0}
         index={lightboxIndex}
         close={() => setLightboxIndex(-1)}
-        slides={filtered.map((p) => ({ src: p.src, alt: p.alt }))}
+        slides={filtered.map((p) => ({ src: p.src, alt: p.alt, description: p.location }))}
+        plugins={[Captions]}
       />
     </div>
   );
