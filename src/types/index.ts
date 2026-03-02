@@ -16,6 +16,6 @@ export interface Photo {
   id: number;
   src: string;
   alt: string;
-  collection: string;
+  tags: string[];
   location?: string;
 }
