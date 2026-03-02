@@ -8,7 +8,7 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 
 const photos = [
-  { src: "/images/homepage-1.jpg", alt: "Lone figure in a misty mountain forest",          description: "Colombia",                width: 1800, height: 1010 },
+  { src: "/images/homepage-1.jpg", alt: "Lone figure in a misty mountain forest",          description: "Oaxaca, Mexico",          width: 1800, height: 1010 },
   { src: "/images/homepage-2.jpg", alt: "Charles Bridge and Prague skyline at golden hour", description: "Prague, Czech Republic",   width: 1800, height: 1010 },
   { src: "/images/homepage-3.jpg", alt: "Weathered rowboats on the green water of Lake Annecy", description: "Lake Annecy, France", width: 1800, height: 1010 },
   { src: "/images/homepage-4.jpg", alt: "Misty country road with stone wall in Kerry",      description: "Kerry, Ireland",          width: 1800, height: 1010 },
