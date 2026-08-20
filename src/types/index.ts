@@ -6,6 +6,8 @@ export interface PostMeta {
   category: string;
   readingTime: string;
   ogImage?: string;
+  linkedinText?: string;
+  instagramCaption?: string;
 }
 
 export interface Post extends PostMeta {

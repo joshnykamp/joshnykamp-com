@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "social:publish": "tsx scripts/publish-social.ts",
+    "social:auth:linkedin": "tsx scripts/setup-linkedin-auth.ts",
+    "social:auth:instagram": "tsx scripts/setup-instagram-auth.ts",
+    "social:refresh:instagram": "tsx scripts/refresh-instagram-token.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -29,6 +33,7 @@
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.12",
     "typescript": "^5"
   }
 }

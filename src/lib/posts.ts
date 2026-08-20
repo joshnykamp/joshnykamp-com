@@ -26,6 +26,8 @@ function parsePost(
       category: data.category ?? DEFAULT_CATEGORY,
       readingTime: readingTime(content).text,
       ogImage: data.ogImage,
+      linkedinText: data.linkedinText,
+      instagramCaption: data.instagramCaption,
     },
     content,
   };
