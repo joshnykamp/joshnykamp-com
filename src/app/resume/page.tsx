@@ -109,7 +109,7 @@ const experience = [
 ];
 
 const skills = {
-  "Leadership": [
+  Leadership: [
     "Engineering Management",
     "Org Design",
     "Hiring & Talent Development",
@@ -117,7 +117,7 @@ const skills = {
     "Offshore Team Management",
     "OKRs & SDLC",
   ],
-  "Engineering": [
+  Engineering: [
     "Elixir / Phoenix",
     "Node.js",
     "React",
@@ -127,7 +127,7 @@ const skills = {
     "Docker",
     "Android / iOS",
   ],
-  "Architecture": [
+  Architecture: [
     "Distributed Systems",
     "High-Scale Architecture",
     "Headless CMS",
@@ -149,11 +149,29 @@ const education = [
   },
 ];
 
+interface ResumeRowProps {
+  period: string;
+  location?: string;
+  children: React.ReactNode;
+}
+
+function ResumeRow({ period, location, children }: ResumeRowProps) {
+  return (
+    <div className="grid md:grid-cols-4 gap-4">
+      <div className="md:col-span-1">
+        <p className="text-stone-400 text-sm font-mono">{period}</p>
+        {location && (
+          <p className="text-stone-500 text-xs mt-1">{location}</p>
+        )}
+      </div>
+      <div className="md:col-span-3">{children}</div>
+    </div>
+  );
+}
+
 export default function ResumePage() {
   return (
     <div className="container-content py-20 max-w-3xl">
-
-      {/* Header */}
       <div className="flex items-start justify-between mb-16 pb-8 border-b border-stone-700">
         <div>
           <p className="label-mono mb-3">Resume</p>
@@ -169,38 +187,30 @@ export default function ResumePage() {
         </a>
       </div>
 
-      {/* Experience */}
       <section className="mb-14">
         <h2 className="label-mono mb-8">Experience</h2>
         <div className="space-y-12">
-          {experience.map((job, idx) => (
-            <div key={idx} className="grid md:grid-cols-4 gap-4">
-              <div className="md:col-span-1">
-                <p className="text-stone-400 text-sm font-mono">{job.period}</p>
-                {job.location && (
-                  <p className="text-stone-500 text-xs mt-1">{job.location}</p>
-                )}
-              </div>
-              <div className="md:col-span-3">
-                <h3 className="heading-display text-lg text-gold">{job.role}</h3>
-                <p className="text-stone-300 text-sm mb-3">{job.company}</p>
-                {job.highlights.length > 0 && (
-                  <ul className="space-y-1.5">
-                    {job.highlights.map((h, i) => (
-                      <li key={i} className="flex gap-2 text-stone-400 text-sm">
-                        <span className="text-gold mt-0.5 flex-shrink-0">→</span>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
+          {experience.map((job) => (
+            <ResumeRow
+              key={`${job.company}-${job.period}`}
+              period={job.period}
+              location={job.location}
+            >
+              <h3 className="heading-display text-lg text-gold">{job.role}</h3>
+              <p className="text-stone-300 text-sm mb-3">{job.company}</p>
+              <ul className="space-y-1.5">
+                {job.highlights.map((highlight) => (
+                  <li key={highlight} className="flex gap-2 text-stone-400 text-sm">
+                    <span className="text-gold mt-0.5 flex-shrink-0">→</span>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </ResumeRow>
           ))}
         </div>
       </section>
 
-      {/* Skills */}
       <section className="mb-14">
         <h2 className="label-mono mb-8">Skills</h2>
         <div className="space-y-6">
@@ -224,37 +234,24 @@ export default function ResumePage() {
         </div>
       </section>
 
-      {/* Education */}
       <section className="mb-14">
         <h2 className="label-mono mb-8">Education</h2>
         <div className="space-y-8">
-          {education.map((ed) => (
-            <div key={ed.institution} className="grid md:grid-cols-4 gap-4">
-              <div className="md:col-span-1">
-                <p className="text-stone-400 text-sm font-mono">{ed.period}</p>
-              </div>
-              <div className="md:col-span-3">
-                <h3 className="heading-display text-lg text-gold">{ed.institution}</h3>
-                <p className="text-stone-300 text-sm">{ed.focus}</p>
-              </div>
-            </div>
+          {education.map((school) => (
+            <ResumeRow key={school.institution} period={school.period}>
+              <h3 className="heading-display text-lg text-gold">{school.institution}</h3>
+              <p className="text-stone-300 text-sm">{school.focus}</p>
+            </ResumeRow>
           ))}
         </div>
       </section>
 
-      {/* Military */}
       <section>
         <h2 className="label-mono mb-8">Military</h2>
-        <div className="grid md:grid-cols-4 gap-4">
-          <div className="md:col-span-1">
-            <p className="text-stone-400 text-sm font-mono">2000 — 2004</p>
-          </div>
-          <div className="md:col-span-3">
-            <h3 className="heading-display text-lg text-gold">U.S. Navy</h3>
-          </div>
-        </div>
+        <ResumeRow period="2000 — 2004">
+          <h3 className="heading-display text-lg text-gold">U.S. Navy</h3>
+        </ResumeRow>
       </section>
-
     </div>
   );
 }

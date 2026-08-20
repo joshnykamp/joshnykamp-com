@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { OG_DEFAULT_IMAGE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://joshnykamp.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Josh Nykamp — Engineering Leader & Photographer",
     template: "%s | Josh Nykamp",
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://joshnykamp.com",
+    url: SITE_URL,
     siteName: "Josh Nykamp",
-    images: [{ url: "/images/og-default.jpg", width: 1200, height: 630 }],
+    images: [{ url: OG_DEFAULT_IMAGE, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -25,14 +26,14 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-stone-950 text-stone-100">
+    <html lang="en">
+      <body className="min-h-screen flex flex-col">
         <Nav />
         <main className="flex-1 page-enter">{children}</main>
         <Footer />

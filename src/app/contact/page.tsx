@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EMAIL, SOCIAL_LINKS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -6,10 +7,10 @@ export const metadata: Metadata = {
 };
 
 const links = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/josh-nykamp/", note: "Best for professional inquiries" },
-  { label: "Instagram", href: "https://instagram.com/joshnykamp", note: "Photography updates" },
-  { label: "GitHub", href: "https://github.com/joshnykamp", note: "Code & projects" },
-  { label: "Email", href: "mailto:hello@joshnykamp.com", note: "hello@joshnykamp.com" },
+  { label: "LinkedIn", href: SOCIAL_LINKS.linkedin, note: "Best for professional inquiries" },
+  { label: "Instagram", href: SOCIAL_LINKS.instagram, note: "Photography updates" },
+  { label: "GitHub", href: SOCIAL_LINKS.github, note: "Code & projects" },
+  { label: "Email", href: `mailto:${EMAIL}`, note: EMAIL },
 ];
 
 export default function ContactPage() {
@@ -25,23 +26,27 @@ export default function ContactPage() {
       </p>
 
       <div className="space-y-3">
-        {links.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="flex items-center justify-between p-5 card hover:bg-stone-800 group transition-colors"
-          >
-            <div>
-              <p className="font-medium text-stone-100 group-hover:text-gold transition-colors">
-                {link.label}
-              </p>
-              <p className="text-stone-500 text-sm mt-0.5 font-mono">{link.note}</p>
-            </div>
-            <span className="text-stone-600 group-hover:text-gold transition-colors text-lg">→</span>
-          </a>
-        ))}
+        {links.map((link) => {
+          const isExternal = link.href.startsWith("http");
+
+          return (
+            <a
+              key={link.label}
+              href={link.href}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              className="flex items-center justify-between p-5 card hover:bg-stone-800 group transition-colors"
+            >
+              <div>
+                <p className="font-medium text-stone-100 group-hover:text-gold transition-colors">
+                  {link.label}
+                </p>
+                <p className="text-stone-500 text-sm mt-0.5 font-mono">{link.note}</p>
+              </div>
+              <span className="text-stone-600 group-hover:text-gold transition-colors text-lg">→</span>
+            </a>
+          );
+        })}
       </div>
     </div>
   );

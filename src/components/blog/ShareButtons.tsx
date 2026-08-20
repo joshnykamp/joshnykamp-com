@@ -1,64 +1,61 @@
 "use client";
 
+import { useState } from "react";
+
 interface ShareButtonsProps {
   url: string;
   title: string;
 }
 
 export function ShareButtons({ url, title }: ShareButtonsProps) {
-  const encoded = encodeURIComponent(url);
+  const [copied, setCopied] = useState(false);
+
+  const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 
   const platforms = [
     {
       label: "LinkedIn",
-      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`,
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     },
     {
       label: "Facebook",
-      href: `https://www.facebook.com/sharer/sharer.php?u=${encoded}`,
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
     },
     {
       label: "Threads",
-      href: `https://www.threads.net/intent/post?text=${encodedTitle}%20${encoded}`,
+      href: `https://www.threads.net/intent/post?text=${encodedTitle}%20${encodedUrl}`,
     },
     {
       label: "Twitter/X",
-      href: `https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`,
+      href: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
     },
   ];
 
-  const copyLink = () => {
+  function copyLink() {
     navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById("copy-link-btn");
-      if (btn) {
-        btn.textContent = "Copied!";
-        setTimeout(() => { if (btn) btn.textContent = "Copy link"; }, 2000);
-      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
     });
-  };
+  }
 
   return (
     <div>
       <p className="label-mono mb-4">Share this post</p>
       <div className="flex flex-wrap gap-2">
-        {platforms.map((p) => (
+        {platforms.map((platform) => (
           <a
-            key={p.label}
-            href={p.href}
+            key={platform.label}
+            href={platform.href}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-outline text-sm"
           >
-            {p.label} →
+            {platform.label} →
           </a>
         ))}
-        <button
-          id="copy-link-btn"
-          onClick={copyLink}
-          className="btn-outline text-sm"
-        >
-          Copy link
+        <button onClick={copyLink} className="btn-outline text-sm">
+          {copied ? "Copied!" : "Copy link"}
         </button>
       </div>
     </div>

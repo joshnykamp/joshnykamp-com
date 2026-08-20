@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SOCIAL_LINKS } from "@/lib/site";
+
+const currently = [
+  "Senior Director of Engineering · DraftKings Lottery Fulfillment",
+  "Splitting time between Huntington Beach, CA and Leixlip, Ireland",
+  "Embedding AI into the engineering SDLC",
+  "Shooting landscapes on both sides of the Atlantic",
+];
 
 export const metadata: Metadata = {
   title: "About",
@@ -29,7 +37,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="space-y-2">
-            <a href="https://www.linkedin.com/in/josh-nykamp/" target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center text-sm">LinkedIn →</a>
+            <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="btn-outline w-full justify-center text-sm">LinkedIn →</a>
             <Link href="/resume" className="btn-outline w-full justify-center text-sm">View Resume →</Link>
           </div>
         </div>
@@ -80,10 +88,11 @@ export default function AboutPage() {
           <div className="pt-4 border-t border-stone-700">
             <h3 className="label-mono mb-4">Currently</h3>
             <ul className="space-y-2 text-stone-400 text-sm">
-              <li className="flex gap-3"><span className="text-gold">→</span> Senior Director of Engineering · DraftKings Lottery Fulfillment</li>
-              <li className="flex gap-3"><span className="text-gold">→</span> Splitting time between Huntington Beach, CA and Leixlip, Ireland</li>
-              <li className="flex gap-3"><span className="text-gold">→</span> Embedding AI into the engineering SDLC</li>
-              <li className="flex gap-3"><span className="text-gold">→</span> Shooting landscapes on both sides of the Atlantic</li>
+              {currently.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span className="text-gold">→</span> {item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>

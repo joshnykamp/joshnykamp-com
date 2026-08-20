@@ -2,14 +2,18 @@ import Link from "next/link";
 import { format } from "date-fns";
 import type { PostMeta } from "@/types";
 
-export function PostCard({ post }: { post: PostMeta }) {
+interface PostCardProps {
+  post: PostMeta;
+}
+
+export function PostCard({ post }: PostCardProps) {
   return (
     <Link
       href={`/blog/${post.slug}`}
       className="card p-6 flex flex-col gap-4 group"
     >
       <div>
-        <p className="label-mono mb-2 text-gold/70">{post.category ?? "Engineering"}</p>
+        <p className="label-mono mb-2 text-gold/70">{post.category}</p>
         <h3 className="heading-display text-lg leading-snug group-hover:text-gold transition-colors">
           {post.title}
         </h3>

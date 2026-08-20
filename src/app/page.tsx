@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getRecentPosts } from "@/lib/posts";
 import { PostCard } from "@/components/blog/PostCard";
-import HomepagePhotoGrid from "@/components/HomepagePhotoGrid";
+import { HomepagePhotoGrid } from "@/components/HomepagePhotoGrid";
 
 export const metadata: Metadata = {
   title: "Josh Nykamp — Engineering Leader & Photographer",

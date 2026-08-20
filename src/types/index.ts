@@ -3,7 +3,7 @@ export interface PostMeta {
   title: string;
   date: string;
   excerpt: string;
-  category?: string;
+  category: string;
   readingTime: string;
   ogImage?: string;
 }

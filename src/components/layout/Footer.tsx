@@ -1,9 +1,9 @@
-import Link from "next/link";
+import { SOCIAL_LINKS } from "@/lib/site";
 
 const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/josh-nykamp/" },
-  { label: "Instagram", href: "https://instagram.com/joshnykamp" },
-  { label: "GitHub", href: "https://github.com/joshnykamp" },
+  { label: "LinkedIn", href: SOCIAL_LINKS.linkedin },
+  { label: "Instagram", href: SOCIAL_LINKS.instagram },
+  { label: "GitHub", href: SOCIAL_LINKS.github },
 ];
 
 export function Footer() {
@@ -14,15 +14,15 @@ export function Footer() {
           © {new Date().getFullYear()} Josh Nykamp
         </div>
         <div className="flex gap-6">
-          {socials.map((s) => (
+          {socials.map((social) => (
             <a
-              key={s.label}
-              href={s.href}
+              key={social.label}
+              href={social.href}
               target="_blank"
               rel="noopener noreferrer"
               className="text-stone-500 hover:text-gold text-sm font-mono transition-colors"
             >
-              {s.label}
+              {social.label}
             </a>
           ))}
         </div>
