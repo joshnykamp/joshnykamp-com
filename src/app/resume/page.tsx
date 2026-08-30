@@ -5,30 +5,55 @@ export const metadata: Metadata = {
   description: "Engineering leadership experience — Senior Director of Engineering at DraftKings.",
 };
 
+const summary =
+  "Engineering executive with 15 years of success commanding technology strategy, organizational transformation, and product delivery across regulated, high scale consumer platforms. Proven force in building elite teams, integrating acquired organizations, modernizing architecture, and converting engineering investment into measurable growth. Drove AI native development across five teams to cut cycle time by 30% and launched product lines producing more than $3M in incremental ARR.";
+
+const coreCompetencies = [
+  "Engineering Organization Design",
+  "Technology Strategy",
+  "AI Native SDLC",
+  "Mergers and Acquisitions Integration",
+  "Platform Architecture",
+  "DevOps & CI/CD",
+  "Cloud Infrastructure",
+  "Product Engineering",
+  "Enterprise Architecture",
+  "High Concurrency Systems",
+  "Talent Acquisition & Retention",
+  "Regulatory Compliance",
+  "Site Reliability Engineering",
+];
+
+const careerHighlights = [
+  "Scaled engineering from 11 to more than 70 professionals with zero regrettable attrition and 20 referral hires, helping position Jackpocket for its $750M acquisition by DraftKings",
+  "Cut infrastructure costs by 50% while establishing the largest production Elixir organization in the US",
+  "Transformed deployment cadence from 1–2 monthly releases to hundreds of deployments per month within six months, implementing progressive delivery, guarded releases, and a roll-forward incident response strategy",
+];
+
 const experience = [
   {
-    company: "DraftKings",
+    company: "DraftKings, formerly Jackpocket",
     role: "Senior Director of Engineering",
-    period: "2024 — Present",
+    period: "Jan 2024 — Present",
     location: "Remote",
     highlights: [
-      "Led integration of Jackpocket into the DraftKings ecosystem post-acquisition",
-      "Expanded lottery product line — launched keno and scaled scratchers across the platform",
-      "Founded a new hardware team building machines for lottery and scratcher automation",
+      "Completed engineering role evaluation and functional reallocation within three months by integrating 70 positions and moving SRE, security, and QA talent into shared DraftKings verticals",
+      "Reduced engineering cycle time by 30% by deploying Claude, Gemini, and GitHub Copilot across planning, story authoring, development, and debugging workflows",
+      "Generated $3M in incremental ARR by launching keno and scaling scratch-off ticket products across five states",
+      "Consolidated three contractor relationships into one internal capability by founding and staffing a six-person hardware engineering team for automated lottery and scratch-off dispensing machines",
+      "Modernized ticket discovery and segmentation by replacing a Tesseract-based OCR pipeline with a self-hosted Qwen vision model, reducing adaptation to ticket-format changes from days of engineering work to little or no code changes",
     ],
   },
   {
-    company: "Jackpocket (acquired by DraftKings)",
+    company: "Jackpocket",
     role: "VP of Engineering",
-    period: "2021 — 2024",
+    period: "Jan 2021 — Dec 2023",
     location: "Remote",
     highlights: [
-      "Inherited a single large team with no clear ownership boundaries; split engineering into dedicated ecommerce and fulfillment orgs with separate backlogs and independent release cycles",
-      "Redesigned core architecture around a message bus with a testable interface, decoupling ecommerce and fulfillment so each could ship independently",
-      "Ran an Accelerate book club and drove full DevOps adoption — within 6 months the team went from 1–2 releases per month to deploying many times per day behind feature flags, eliminating rollbacks",
-      "Launched scratchers in 2022, adding a new line of business to the platform",
-      "Grew the engineering org from 11 to 50 engineers, 3 SREs, 2 security engineers, and 5 managers over 3 years with no regrettable attrition",
-      "Built a test suite and CI/CD pipeline robust enough to eliminate QA entirely by 2024",
+      "Expanded engineering from 11 to more than 70 engineers, three SREs, two security engineers, and five engineering managers by activating trusted networks that produced 20 referral hires with zero regrettable attrition",
+      "Doubled product velocity by restructuring a monolithic organization into dedicated ecommerce and fulfillment teams with independent backlogs, ownership, and release cycles",
+      "Transformed delivery from 1–2 releases per month to continuous deployment within six months, embedding DevSecOps practices including automated CI/CD, static code analysis, secret scanning, feature flags, and progressive delivery",
+      "Established the fulfillment platform that enabled scratch-off tickets as a scalable product line, orchestrating ticket ordering, activation, automated scratching and scanning, winner validation, and ML-based ticket-to-customer matching",
     ],
   },
   {
@@ -37,10 +62,9 @@ const experience = [
     period: "Sep 2019 — Jun 2021",
     location: "Irvine, CA (Remote)",
     highlights: [
-      "Partnered with GM to write the business plan, gather requirements, and define product specs for Weedmaps Exchange — the company's B2B wholesale marketplace",
-      "Hired 13 engineers to build Weedmaps Exchange; launched May 2019 — within 6 months it was generating $3M in monthly GMV",
-      "Hired and developed Engineering Managers; managed offshore teams in Costa Rica and Colombia",
-      "Authored the Weedmaps Engineering Career Ladder and review process; designed new SDLC to improve team performance tracking",
+      "Created $3M in monthly GMV within six months by hiring 13 engineers and building the Exchange platform from the ground up across California, Oklahoma, and Michigan",
+      "Enabled distributed execution across five teams by directing 45 engineers and coordinating nearshore staff augmentation in Costa Rica and Colombia",
+      "Standardized titles, leveling, and performance management during companywide growth from 50 to 211 engineers by authoring the Engineering Career Ladder and review process",
     ],
   },
   {
@@ -49,10 +73,8 @@ const experience = [
     period: "Aug 2017 — Sep 2019",
     location: "Irvine, CA",
     highlights: [
-      "Built and launched Weedmaps Logistics — Android/iOS driver apps and a web dispatch interface for managing pickup orders and assigning drivers",
-      "Managed 2 cross-functional teams of 8 engineers with zero attrition; maintained 98% test coverage and 99.9% uptime across all production systems",
-      "Piloted Elixir adoption to replace Ruby; created an Elixir training program to upskill existing engineers and onboard new hires",
-      "Created a junior engineer training program; hired 50+ engineers across the organization",
+      "Enabled hundreds of thousands of deliveries annually by building and launching Weedmaps Logistics with Android and iOS driver applications and a web dispatch interface",
+      "Halved infrastructure costs by piloting Elixir as the replacement for Ruby on Rails and building the training model that established the largest production Elixir organization in the United States",
     ],
   },
   {
@@ -61,8 +83,8 @@ const experience = [
     period: "Oct 2016 — Aug 2017",
     location: "Irvine, CA",
     highlights: [
-      "Built a GraphQL API using Elixir/Phoenix; developed frontend applications in React, GraphQL, and Apollo",
-      "Established Docker-based development environments across engineering teams",
+      "Created the foundation for three new product lines by diagnosing a minified PHP codebase with no recoverable repository and executing a complete rebuild in Elixir",
+      "Established the architecture for the migration to Elixir, standardizing new services on Elixir and Phoenix with REST APIs for frontend integration and RabbitMQ for asynchronous service-to-service communication",
     ],
   },
   {
@@ -109,31 +131,25 @@ const experience = [
 ];
 
 const skills = {
-  Leadership: [
-    "Engineering Management",
-    "Org Design",
-    "Hiring & Talent Development",
-    "Career Laddering",
-    "Offshore Team Management",
-    "OKRs & SDLC",
-  ],
-  Engineering: [
+  "Languages & Frameworks": [
     "Elixir / Phoenix",
+    "Ruby on Rails",
+    "Python",
     "Node.js",
-    "React",
     "GraphQL / Apollo",
-    "PHP / Laravel / Drupal",
-    "TypeScript",
+    "React / Next.js",
+  ],
+  "Cloud & DevOps": [
+    "AWS",
+    "Google Cloud Platform",
+    "GitHub Actions",
+    "Argo",
     "Docker",
-    "Android / iOS",
+    "LaunchDarkly",
   ],
-  Architecture: [
-    "Distributed Systems",
-    "High-Scale Architecture",
-    "Headless CMS",
-    "API Design",
-    "Smart TV / Embedded",
-  ],
+  "Artificial Intelligence": ["Claude", "Gemini", "Qwen", "GitHub Copilot"],
+  "Platforms & Operations": ["RabbitMQ", "Datadog", "StrongDM", "Jira"],
+  "Mobile Engineering": ["iOS", "Android"],
 };
 
 const education = [
@@ -186,6 +202,32 @@ export default function ResumePage() {
           Download PDF
         </a>
       </div>
+
+      <section className="mb-14">
+        <p className="text-stone-300 leading-relaxed mb-6">{summary}</p>
+        <div className="flex flex-wrap gap-2">
+          {coreCompetencies.map((item) => (
+            <span
+              key={item}
+              className="px-3 py-1 bg-stone-800 border border-stone-700 rounded-sm text-stone-300 text-xs font-mono"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-14">
+        <h2 className="label-mono mb-8">Career Highlights</h2>
+        <ul className="space-y-3">
+          {careerHighlights.map((highlight) => (
+            <li key={highlight} className="flex gap-2 text-stone-300 text-sm">
+              <span className="text-gold mt-0.5 flex-shrink-0">→</span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="mb-14">
         <h2 className="label-mono mb-8">Experience</h2>
