@@ -22,8 +22,8 @@ export default function PhotographyPage() {
           <span className="text-gold">from the field.</span>
         </h1>
         <p className="text-stone-400 max-w-lg leading-relaxed">
-          Amateur travel and landscape photography. Mostly wide open spaces,
-          dramatic light, and places worth remembering.
+          Amateur travel and landscape photography. I mostly shoot landscapes now but I still love Fashion and Street Photography. 
+          I try to always carry a camera with me (Phone doesn't count). 
         </p>
       </div>
 
