@@ -48,7 +48,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-stone-300 leading-relaxed">
               <p>
                 I got out of the Navy about 20 years ago and taught myself ActionScript.
-                My first real job was as a PHP engineer at Hustler — not a typical origin story,
+                My first real job was as a PHP engineer at Hustler,
                 but it got me writing production code fast. From there I moved through PHP,
                 Node, and React at NBC, then spent a year as an Elixir engineer at Weedmaps
                 before moving into management.
@@ -56,15 +56,14 @@ export default function AboutPage() {
               <p>
                 I spent five years at Weedmaps, leaving as Director of Engineering around the
                 time it went public. Then joined Jackpocket as VP of Engineering, where I
-                implemented agile/scrum and a proper DevOps culture — taking the team from
+                implemented agile/scrum and a proper DevSecOps culture, taking the team from
                 releasing once or twice a month to shipping every commit. Two years ago
                 DraftKings acquired Jackpocket, and now I'm a Senior Director of Engineering
                 on the lottery fulfillment team, focused on getting the team to embed AI
                 into the SDLC.
               </p>
               <p>
-                I write about engineering leadership, team building, and the practical side
-                of adopting new technology — when I have something worth saying.
+                I write about engineering leadership, building teams, software architecture, and new technology based on things I've learned along the way.
               </p>
             </div>
           </div>
@@ -73,14 +72,9 @@ export default function AboutPage() {
             <h2 className="heading-display text-xl mb-3 text-gold">The Photography Side</h2>
             <div className="space-y-4 text-stone-300 leading-relaxed">
               <p>
-                I shoot landscape and travel photography — mostly the kind of places you
-                find when you split time between Southern California and rural Ireland.
-                Entirely self-taught, still figuring it out, and fine with that.
-              </p>
-              <p>
-                Living in Huntington Beach gives me coastline. Spending a quarter of my time
-                in Leixlip gives me green hills, grey skies, and a completely different
-                kind of light. It's a good combination.
+                I shoot landscape and travel photography, mostly in California and Ireland. 
+                I studied photography and fashion/advertising photography in Santa Barbara and Miami, 
+                and I still spend a lot of time learning new lighting techniques, experimenting with filters, and improving my work in Lightroom.
               </p>
             </div>
           </div>
