@@ -22,7 +22,7 @@ export default function ContactPage() {
       </h1>
       <p className="text-stone-400 leading-relaxed mb-16 max-w-md">
         I'm always happy to talk about engineering leadership, photography, 
-        or interesting opportunities. Reach out on whatever platform makes sense.
+        or interesting opportunities. Don't hesistate to email, call or connect with me. 
       </p>
 
       <div className="space-y-3">
