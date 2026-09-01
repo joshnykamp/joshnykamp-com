@@ -15,8 +15,8 @@ export default async function HomePage() {
   return (
     <>
       <section className="relative min-h-[90vh] flex items-center border-b border-stone-700 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(232,201,122,0.06),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(122,184,232,0.04),transparent_60%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,rgba(232,201,122,0.06),transparent_60%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom_left,rgba(122,184,232,0.04),transparent_60%)]" />
         <div className="container-content w-full py-32">
           <p className="label-mono mb-6">Senior Director of Engineering · DraftKings</p>
           <h1 className="heading-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-stone-100 max-w-4xl mb-8">
