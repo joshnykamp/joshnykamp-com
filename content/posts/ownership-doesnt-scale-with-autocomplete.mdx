@@ -1,0 +1,49 @@
+---
+title: "Ownership Doesn't Scale With Autocomplete"
+date: "2026-09-21"
+excerpt: "AI has made it trivial to one shot an app. It hasn't made anyone able to explain what they shipped. Here's the plan to ship workflow that keeps speed and ownership together."
+category: "Engineering"
+ogImage: "/images/posts/ownership-doesnt-scale-with-autocomplete/ai-devops-workflow.png"
+---
+
+The most common failure I'm seeing right now isn't bad code. It's an engineer who can't explain the code they shipped and falls back on "AI wrote it."
+
+That's not an answer, and it never was. If you merged it, you own it. Open source projects have held this line since AI coding tools took off: if you can't explain a change in review, it doesn't merge. It's a simple rule, and it's the right one for any team writing production code with AI in the loop.
+
+The reason it matters more now than it used to is that one shotting an entire app has become trivial. Ask a model for a JS app and you'll have something running in minutes. For a prototype, that's fine, arguably great. For something you have to maintain, secure, and explain to an auditor two years from now, it's not. The DevOps discipline that existed before AI, small changes, clear ownership, traceability, doesn't go away because the code got easier to produce. If anything it matters more, because we're now generating more code while understanding less of it on average.
+
+Here's the workflow I've been using with my teams to keep speed and discipline together.
+
+![Diagram of the AI plus DevOps workflow: plan the feature with AI, create the story in Jira, break it into subtasks, build with discipline, create a PR, ship the story, then measure and repeat](/images/posts/ownership-doesnt-scale-with-autocomplete/ai-devops-workflow.png)
+
+## Plan before you build
+
+Spend real time up front using Claude to think through the feature, not just generate it. Have it help you reason through edge cases, data model implications, and rollout risk, then write the plan out as MD files you can commit alongside the code. This step is the one most teams skip when they're moving fast with AI, and it's the one that saves you the most time later.
+
+## Turn the plan into tracked work
+
+Use the Jira MCP to create the story for what you're releasing this sprint, and put it behind a feature flag from the start. Have Claude break the story into subtasks small enough to ship in a day or less. Small changes are easier to review, easier to revert, and easier to reason about when something goes wrong.
+
+## Build, but keep the trail
+
+Write the code however you want, by hand or with an agent, but hold the line on DevOps practices. Put the Jira story key in every commit. It's a small habit that pays off twice: it links the commit back to the story automatically, and it gives you an exact, queryable trail if you ever need to answer a compliance audit about what changed and why.
+
+## Review without burying your seniors
+
+Open a PR and have one or more agents review it before a human does. Nobody should have to read 10,000 lines of AI-generated code cold. We took this further with a self-improving review agent: it read PR comments directly and learned from thumbs up, thumbs down, and emoji reactions from engineers, then updated its own review prompt in GitHub to reflect what the team actually cared about.
+
+Worth being honest about what happened next. Review time roughly doubled, and PRs were doubling or tripling in size. The load landed hardest on the senior engineers who did most of the reviewing, and we started seeing real review fatigue. We fixed it three ways: we went back to the DORA data to check whether tickets were actually being broken down small enough, we let the self-improving agent keep tuning itself against engineer feedback, and we paired that with a hard return to smaller commits. **The smaller commits were what actually brought the human review load back down.** The agent helped with quality, but size discipline is what fixed the bottleneck.
+
+## Ship, measure, repeat
+
+Ship the story, then repeat the loop until the feature is complete. Feature flags matter more than ever here. If something breaks, you turn it off and roll forward instead of scrambling to revert. And because you're shipping more flags, flag debt becomes its own problem. Build a skill that finds flags sitting at 100% for a full sprint and have Copilot open the PR to remove them automatically. It's a small investment that keeps you from accumulating a pile of dead conditionals nobody wants to touch.
+
+## Where product fits in
+
+This workflow also opens a door for product managers that didn't really exist before. Have Claude build two or three versions of a feature, then design an experiment to see which one actually converts. You're not choosing between "ship the AI version" or "ship the careful version," you're testing real variants against real users before committing.
+
+## Measure it, don't assume it
+
+If your team has recently moved to an AI assisted SDLC, or hasn't started measuring DORA at all, start now. We used Sleuth, and it surfaced the two numbers that mattered most alongside the core DORA metrics: PR size and review time. Those are the leading indicators that tell you whether you're actually shipping faster or just moving the bottleneck from writing code to reviewing it.
+
+AI can make writing code faster. It doesn't make understanding it, owning it, or shipping it safely any easier on its own. That still comes down to the same DevOps discipline it always did. The teams that hold onto it will be the ones still moving fast a year from now. The ones that don't will be explaining to an auditor, or a customer, why nobody can say what a piece of their own codebase actually does.
